@@ -1,0 +1,3 @@
+administer simple voting:
+  title: 'Administrar o sistema de votação'
+  description: 'Permite criar, editar e excluir perguntas e opções de votação.'
