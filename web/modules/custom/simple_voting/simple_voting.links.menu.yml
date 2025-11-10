@@ -1,27 +1,6 @@
 simple_voting.admin:
   title: 'Sistema de Votação'
-  description: 'Gerencie perguntas, opções e votos.'
-  parent: system.admin_content
-  route_name: entity.simple_voting_question.collection
-  weight: 10
-
-simple_voting.questions:
-  title: 'Perguntas'
   description: 'Gerencie as perguntas de votação.'
-  parent: simple_voting.admin
-  route_name: entity.simple_voting_question.collection
-  weight: 0
-
-simple_voting.options:
-  title: 'Opções'
-  description: 'Gerencie as opções de votação.'
-  parent: simple_voting.admin
-  route_name: entity.simple_voting_option.collection
-  weight: 1
-
-simple_voting.votes:
-  title: 'Votos'
-  description: 'Veja os votos registrados.'
-  parent: simple_voting.admin
-  route_name: entity.simple_voting_vote.collection
-  weight: 2
+  parent: system.admin
+  route_name: simple_voting.admin
+  weight: -21
