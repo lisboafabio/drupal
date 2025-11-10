@@ -1,0 +1,117 @@
+# Rota principal do módulo
+simple_voting.admin:
+  path: '/admin/content/simple-voting'
+  defaults:
+    _controller: '\Drupal\simple_voting\Controller\AdminController::index'
+    _title: 'Sistema de Votação'
+  requirements:
+    _permission: 'administer simple voting'
+  
+# Perguntas
+entity.simple_voting_question.collection:
+  path: '/admin/content/simple-voting/questions'
+  defaults:
+    _entity_list: 'simple_voting_question'
+    _title: 'Gerenciar Perguntas'
+  requirements:
+    _permission: 'administer simple voting'
+
+entity.simple_voting_question.add_form:
+  path: '/admin/content/simple-voting/questions/add'
+  defaults:
+    _entity_form: 'simple_voting_question.default'
+    _title: 'Adicionar Pergunta'
+  requirements:
+    _permission: 'administer simple voting'
+
+entity.simple_voting_question.edit_form:
+  path: '/admin/content/simple-voting/questions/{simple_voting_question}/edit'
+  defaults:
+    _entity_form: 'simple_voting_question.default'
+    _title: 'Editar Pergunta'
+  requirements:
+    _permission: 'administer simple voting'
+
+entity.simple_voting_question.delete_form:
+  path: '/admin/content/simple-voting/questions/{simple_voting_question}/delete'
+  defaults:
+    _entity_form: 'simple_voting_question.delete'
+    _title: 'Excluir Pergunta'
+  requirements:
+    _permission: 'administer simple voting'
+
+# Opções
+entity.simple_voting_option.collection:
+  path: '/admin/content/simple-voting/options'
+  defaults:
+    _entity_list: 'simple_voting_option'
+    _title: 'Gerenciar Opções'
+  requirements:
+    _permission: 'administer simple voting'
+
+entity.simple_voting_option.add_form:
+  path: '/admin/content/simple-voting/options/add'
+  defaults:
+    _entity_form: 'simple_voting_option.default'
+    _title: 'Adicionar Opção'
+  requirements:
+    _permission: 'administer simple voting'
+
+entity.simple_voting_option.edit_form:
+  path: '/admin/content/simple-voting/options/{simple_voting_option}/edit'
+  defaults:
+    _entity_form: 'simple_voting_option.default'
+    _title: 'Editar Opção'
+  requirements:
+    _permission: 'administer simple voting'
+
+entity.simple_voting_option.delete_form:
+  path: '/admin/content/simple-voting/options/{simple_voting_option}/delete'
+  defaults:
+    _entity_form: 'simple_voting_option.delete'
+    _title: 'Excluir Opção'
+  requirements:
+    _permission: 'administer simple voting'
+
+
+# Votos
+entity.simple_voting_vote.collection:
+  path: '/admin/content/simple-voting/votes'
+  defaults:
+    _entity_list: 'simple_voting_vote'
+    _title: 'Votes'
+  requirements:
+    _permission: 'access content'
+
+entity.simple_voting_vote.add_form:
+  path: '/admin/content/simple-voting/votes/add'
+  defaults:
+    _entity_form: 'simple_voting_vote.add'
+    _title: 'Add Vote'
+  requirements:
+    _permission: 'access content'
+
+entity.simple_voting_vote.edit_form:
+  path: '/admin/content/simple-voting/votes/{simple_voting_vote}/edit'
+  defaults:
+    _entity_form: 'simple_voting_vote.edit'
+    _title_callback: '\Drupal\Core\Entity\Controller\EntityController::editTitle'
+  requirements:
+    _permission: 'access content'
+
+entity.simple_voting_vote.delete_form:
+  path: '/admin/content/simple-voting/votes/{simple_voting_vote}/delete'
+  defaults:
+    _entity_form: 'simple_voting_vote.delete'
+    _title: 'Delete Vote'
+  requirements:
+    _permission: 'access content'
+
+# API: Votação
+simple_voting.api.vote:
+  path: '/api/simple-voting/vote'
+  methods: [POST]
+  defaults:
+    _controller: '\Drupal\simple_voting\Controller\VoteApiController::registerVote'
+  requirements:
+    _user_is_logged_in: 'TRUE'

@@ -1,0 +1,7 @@
+name: 'Simple Voting'
+type: module
+description: 'Sistema simples de votação com perguntas e opções.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:user
