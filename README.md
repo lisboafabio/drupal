@@ -12,3 +12,6 @@ Lá possui todas as opções para gerenciar o sistema de votação.
 
 ## Informações uteis
 Para os usuários que não são admin, ao realizar o login, na aba de <b>Shortcuts</b> há o link de acesso para votar.
+
+## Api
+A api possui uma collection para ser importada no postam que está no diretorio <kdb>./postman</kdb> simples que contém as informações dos endpoints e pode ser importada no postman.

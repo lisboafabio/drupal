@@ -115,3 +115,30 @@ simple_voting.api.vote:
     _controller: '\Drupal\simple_voting\Controller\VoteApiController::registerVote'
   requirements:
     _access: 'TRUE'
+
+simple_voting.api.questions:
+  path: '/api/simple-voting/questions'
+  defaults:
+    _controller: '\Drupal\simple_voting\Controller\VoteApiController::getQuestions'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+
+simple_voting.api.options:
+  path: '/api/simple-voting/questions/{question_id}/options'
+  defaults:
+    _controller: '\Drupal\simple_voting\Controller\VoteApiController::getOptions'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+
+# API: Login
+
+simple_voting.api.login:
+  path: '/api/simple-voting/login'
+  defaults:
+    _controller: '\Drupal\simple_voting\Controller\ApiLoginController::login'
+    _title: 'API Login'
+  methods: [POST]
+  requirements:
+    _access: 'TRUE'

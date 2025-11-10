@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "11d6d608-aed9-4e58-892b-7a5e1212a047",
+		"name": "Drupal10",
+		"description": "# 🚀 Get started here\n\nEsta documentção vai ajudar a enviar requisição para api do projeto em drupal que tem um mini sistema de votos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14683797"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"editor\",\n    \"password\":\"editor\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "my-drupal10.lndo.site/api/simple-voting/login",
+					"host": [
+						"my-drupal10",
+						"lndo",
+						"site"
+					],
+					"path": [
+						"api",
+						"simple-voting",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Votar",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "apiKey",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question_id\": 1, \"option_id\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "my-drupal10.lndo.site/api/simple-voting/vote?=apiKey",
+					"host": [
+						"my-drupal10",
+						"lndo",
+						"site"
+					],
+					"path": [
+						"api",
+						"simple-voting",
+						"vote"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "apiKey"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Perguntas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "apiKey",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "my-drupal10.lndo.site/api/simple-voting/questions?=apiKey",
+					"host": [
+						"my-drupal10",
+						"lndo",
+						"site"
+					],
+					"path": [
+						"api",
+						"simple-voting",
+						"questions"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "apiKey"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Opções por id de pergunta",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "apiKey",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "my-drupal10.lndo.site/api/simple-voting/questions/1/options?=apiKey",
+					"host": [
+						"my-drupal10",
+						"lndo",
+						"site"
+					],
+					"path": [
+						"api",
+						"simple-voting",
+						"questions",
+						"1",
+						"options"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "apiKey"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://template.postman-echo.com"
+		}
+	]
+}
