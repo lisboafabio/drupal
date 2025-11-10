@@ -114,4 +114,4 @@ simple_voting.api.vote:
   defaults:
     _controller: '\Drupal\simple_voting\Controller\VoteApiController::registerVote'
   requirements:
-    _user_is_logged_in: 'TRUE'
+    _access: 'TRUE'
